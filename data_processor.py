@@ -72,6 +72,7 @@ class DataProcessor:
         """ Retrieves and prints the recipe with the highest number of servings. """
         try:
             pipeline = [
+                { '$match': {'serving': {'$type': 'int'}}},
                 { '$sort': { 'serving': -1 } },
                 { '$limit': 1 }
             ]
