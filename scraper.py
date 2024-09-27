@@ -41,7 +41,7 @@ def fetch_recipies(links):
         try:
             document['serving'] = int(serving.split(" ")[0])
         except:
-            document['serving'] = 0
+            document['serving'] = "N/A"
 
         ingredients = []
         for item in soup.find_all("div", class_="list__item"):
